@@ -1,3 +1,22 @@
 <h1>
   {{title}}
 </h1>
+
+<h3>Add cookie:</h3>
+Name:<input type="text" [(ngModel)]="addName"/>
+Value:<input type="text" [(ngModel)]="addValue"/>
+<input type="button" value="Add" (click)="addCookie(addName, addValue)"/>
+
+<h3>Delete cookie:</h3>
+Name:<input type="text" [(ngModel)]="deleteName"/>
+<input type="button" value="Delete" (click)="deleteCookie(deleteName)"/>
+
+<br><br>
+
+<h3>Cookies:</h3>
+<table>
+  <tr *ngFor="let cookie of keys">
+    <td>{{cookie}}</td>
+    <td>{{cookies[cookie]}}</td>
+  </tr>
+</table>
